@@ -600,7 +600,7 @@ ol.problems{padding-left:1.4em;display:grid;gap:12px}
           <a class="btn primary" href="#topics">Start exploring <span class="arr">→</span></a>
           <a class="btn" href="#about">About me</a>
         </div>
-        <p class="views" aria-live="polite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span id="view-count">2,300</span>&nbsp;views since June, 2024</p>
+        <p class="views" aria-live="polite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span id="view-count">5,000</span>&nbsp;views since June, 2024</p>
         <p class="wip"><span class="wip-tag">Work in progress</span> All content on this blog is written solely by me, Jayaditya. Claude has helped me build the animations.</p>
       </div>
       <div class="hero-art">
@@ -13381,11 +13381,11 @@ const tabla=(()=>{
 function stopTabla(){ tabla.stop(); }
 
 /* =====================================================================
-   VIEW COUNTER: 2,300 views carried over from the original blog,
+   VIEW COUNTER: 5,000 views carried over from the original blog,
    plus one per page load from every viewer who can write to the store.
    ===================================================================== */
 (async ()=>{
-  const BASE=2300, el=$('#view-count'); let shown=BASE, anim=0;
+  const BASE=5000, el=$('#view-count'); let shown=BASE, anim=0;
   const fmt=n=>Math.round(n).toLocaleString('en-US');
   const to=n=>{ const from=shown; shown=n; if(RM.matches||n===from){ el.textContent=fmt(n); return; } const t0=performance.now(); cancelAnimationFrame(anim);
     const step=now=>{ const k=Math.min(1,(now-t0)/900); el.textContent=fmt(from+(n-from)*(1-Math.pow(1-k,3))); if(k<1) anim=requestAnimationFrame(step); }; anim=requestAnimationFrame(step); };
